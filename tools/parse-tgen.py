@@ -189,9 +189,9 @@ def find_file_paths(searchpath, patterns, filter_country):
         tree = etree.parse(filter_country[1])
         root = tree.getroot()
         if allBut: 
-            filter_country = filter_country[8:].split(',')
+            filter_country = filter_country[0][8:].split(',')
         else:
-            filter_country = filter_country.split(',')
+            filter_country = filter_country[0].split(',')
         for country in filter_country:
             pdb.set_trace()
             clients.append(root.findall("./node[@typehint='client', @geocodehint='%s']"
