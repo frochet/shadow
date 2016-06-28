@@ -184,7 +184,7 @@ def find_file_paths(searchpath, patterns, filter_country):
     clients = []
     country_path = []
     remainder_path = []
-    allBut = 'All but' in filter_country
+    allBut = filter_country is None or 'All but' in filter_country[0]
     if filter_country is not None:
         tree = etree.parse(filter_country[1])
         root = tree.getroot()
